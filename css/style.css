@@ -101,7 +101,64 @@ img {
 .btn:hover {
   box-shadow: 0 2rem 2rem var(--color-primary-light);
 }
+
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
+
+/* NAVNAR */
+
+nav {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid var(--color-light);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+nav button {
+  display: none;
+}
+
+nav h3 {
+  color: var(--color-primary);
+}
+
+nav .container ul {
+  display: flex;
+  height: 100%;
+}
+
+nav .container ul li a {
+  height: 100%;
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-black);
+  position: relative;
+  transition: var(---transition);
+}
+
+nav .container ul li a:hover {
+  color: var(--color-primary);
+}
+
+.container ul li a.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
