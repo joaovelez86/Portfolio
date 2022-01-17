@@ -1,14 +1,16 @@
 /* Importedfrom google fonts. font-family: 'Montserrat', sans-serif; */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
 
-/* ROOT VARIABLES */
+/* === ROOT VARIABLES === */
 
 :root {
   --color-white: #fff;
   --color-light: #f4f4f4;
+  --color-light-gray: #c0b8b8;
   --color-dark: #525252;
   --color-black: #141415;
-  --color-primary: #f24e1e;
+  --color-primary: #2a2a72;
+
   --color-primary-light: rgba(242, 78, 28, 0.12);
   --color-sucess: #29f5a6;
   --color-warning: #ffce31;
@@ -110,7 +112,7 @@ img {
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
 }
-/* NAVNAR */
+/* === NAVNAR === */
 
 nav {
   width: 100%;
@@ -152,13 +154,14 @@ nav .container ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-black);
+  color: var(--color-light-gray);
   position: relative;
   transition: var(---transition);
 }
 
 nav .container ul li a:hover {
   color: var(--color-primary);
+  font-size: 1.1rem;
 }
 
 nav .container ul li a.active {
@@ -167,7 +170,7 @@ nav .container ul li a.active {
   border-radius: 5px;
 }
 
-/* LANDING SECTION */
+/* === LANDING SECTION === */
 
 section.landing {
   display: grid;
@@ -208,6 +211,7 @@ section.landing .socials a {
 section.landing .socials a:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
+  font-size: 1.2rem;
 }
 
 section.landing .info h1 {
@@ -239,7 +243,7 @@ section.landing .profile-area .outer-circle {
 }
 
 @keyframes move {
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
@@ -257,7 +261,6 @@ section.landing .profile-area .outer-circle span {
   align-items: center;
   box-shadow: 0 0 1rem var(--color-primary-light);
 }
-
 
 section.landing .profile-area .outer-circle span:nth-child(1) {
   left: calc(50% - 2rem);
@@ -280,9 +283,41 @@ section.landing .profile-area .outer-circle span:nth-child(4) {
 }
 
 section.landing .profile-area .inner-circle {
-position: absolute;
-width: 18rem;
-height: 18rem;
-border-radius: 50%;
-overflow: hidden;
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  overflow: hidden;
 }
+
+/* === ABOUT SECTION === */
+
+section.about {
+  background: var(--color-light);
+}
+
+section.about .container {
+  display: grid;
+  grid-template-columns: 26rem auto;
+  gap: 5rem;
+}
+
+section.about p{
+  margin-bottom:  1rem;
+}
+
+section.about .container .read-more-content {
+  display: none;
+}
+
+section.about .container .read-more {
+  display: block;
+  margin: 1rem 0 2 rem;
+  color:  var(--color-primary);
+  cursor: pointer;
+}
+
+section.about .container .read-more:hover {
+  text-decoration: underline;
+}
+
