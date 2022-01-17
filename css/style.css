@@ -8,8 +8,9 @@
   --color-light: #f4f4f4;
   --color-light-gray: #c0b8b8;
   --color-dark: #525252;
-  --color-black: #141415;
+  --color-black: #09090a;
   --color-primary: #2a2a72;
+  --color-primary-2: #009ffd;
 
   --color-primary-light: rgba(242, 78, 28, 0.12);
   --color-sucess: #29f5a6;
@@ -53,11 +54,20 @@ h1 {
   font-size: 3.8rem;
 }
 
+h1:hover {
+  color: var(--color-primary-2);
+  transition: var(---transition);
+}
+
 h2 {
   font-size: 2.6rem;
 }
 h3 {
   font-size: 1.6rem;
+}
+h3:hover {
+  color: #009ffd;
+  transition: var(---transition);
 }
 h4 {
   font-size: 1.2rem;
@@ -76,7 +86,8 @@ p {
 
 section {
   padding: 10rem 0 7rem;
-  max-width: 150vh;
+  max-width: 250vh;
+  /*max-width: 150vh; */
   overflow-x: hidden;
 }
 
@@ -167,7 +178,6 @@ nav .container ul li a:hover {
 nav .container ul li a.active {
   background-color: var(--color-primary);
   color: var(--color-white);
-  border-radius: 5px;
 }
 
 /* === LANDING SECTION === */
@@ -182,7 +192,7 @@ section.landing {
 
 section.landing .container {
   display: grid;
-  grid-template-columns: 10rem auto 28rem;
+  grid-template-columns: 6rem auto 28rem;
   gap: 2rem;
 }
 
@@ -294,6 +304,7 @@ section.landing .profile-area .inner-circle {
 
 section.about {
   background: var(--color-light);
+  margin: 10%;
 }
 
 section.about .container {
@@ -302,8 +313,13 @@ section.about .container {
   gap: 5rem;
 }
 
-section.about p{
-  margin-bottom:  1rem;
+section.about img {
+  border-radius: 0.4rem;
+  margin-left: 1rem;
+}
+
+section.about p {
+  margin: 1rem;
 }
 
 section.about .container .read-more-content {
@@ -313,7 +329,7 @@ section.about .container .read-more-content {
 section.about .container .read-more {
   display: block;
   margin: 1rem 0 2 rem;
-  color:  var(--color-primary);
+  color: var(--color-primary);
   cursor: pointer;
 }
 
@@ -321,3 +337,108 @@ section.about .container .read-more:hover {
   text-decoration: underline;
 }
 
+/* === SKILLS SECTION === */
+
+section.skills .container {
+  width: 50%;
+}
+
+section.skills .skill {
+  margin-bottom: 1rem;
+}
+
+section.skills .skill .head {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-white);
+  padding: 1.6rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+section.skills .skill .head h4 {
+  color: var(--color-white);
+}
+
+section.skills .skill .head .left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+section.skills .skill .item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.6rem;
+  background: var(--color-light);
+  margin-bottom: 0.3rem;
+  transition: var(---transition);
+  border-radius: 5px;
+}
+
+section.skills .skill .item:hover {
+  background: var(--color-white);
+}
+
+/* === SERVICES === */
+
+section.services {
+  background: var(--color-light);
+}
+
+section.services .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+section.services .container .service {
+  background: var(--color-white);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === PORTFOLIO=== */
+
+section.recent-work h1 {
+  text-align: center;
+  margin: 3rem 0 1rem;
+  width: 65%;
+  margin: 5rem;
+}
+
+section.recent-work .projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 3rem;
+}
+
+section.recent-work .projects .project {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section.recent-work .projects .project .action {
+  display: flex;
+  gap: 2rem;
+}
+
+section.recent-work .projects .project .action a {
+  color: var(--color-primary);
+}
+
+section.recent-work .projects .project .action a:hover {
+  text-decoration: underline;
+}
+
+section.recent-work .projects .project .thumbnail img {
+  width: 800px;
+  height: 600px;
+}

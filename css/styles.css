@@ -1,0 +1,1066 @@
+/*                                    FONTE IMPORTADA DO GOOGLE FONTS                                            */
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+
+/*                                      PALETE DE CORES E FONTE PADRÃO                                           */
+:root {
+  --red: #f9032f;
+  --redBtn: #721500; /*#6d2c30;*/
+  --black: #000;
+  --blackBtn: #333333;
+  --white: rgb(245, 245, 245);
+  --gray: #8d8585;
+  --clockworkorange: #f5870c;
+
+  --font-padrao: "poppins", sans-serif;
+  --font-destaque: "RocknRoll One", sans-serif;
+  --font-especial: "Android", sans-serif;
+}
+
+/*                                            ESTILO PADRÃO                                                      */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-destaque);
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: var(--blackBtn);
+}
+
+/*                                           NAVBAR DO SITE                                                      */
+.navbar {
+  background: var(--blackBtn);
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0px 3px 18px 3px rgba(255, 255, 255, 0.267);
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbarLogo {
+  background-color: var(--redBtn);
+  background-image: url("/img/fireNavbarLogo.gif");
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.navbarMenu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbarItem {
+  height: 80px;
+}
+
+.navbarLinks {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  text-decoration: none;
+  height: 100%;
+  transition: all 0.7s ease;
+}
+
+.navbarLinks:hover {
+  transition: all 0.7s ease;
+  text-decoration: underline;
+}
+
+.navbarBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border-color: var(--white);
+  outline: none;
+  border-radius: 4px;
+  background-color: #721500;
+  background: -webkit-linear-gradient(to right, #333333, #721500);
+  background: linear-gradient(to right, #333333, #721500);
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  color: var(--clockworkorange);
+  transition: 0.7s ease;
+}
+
+/*                                     Media querys da minha Navbar                                              */
+
+@media screen and (max-width: 960px) {
+  .navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbarMenu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  .navbarMenu.active {
+    background-color: var(--blackBtn);
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 70vh;
+    font-size: 1rem;
+  }
+
+  #navbarLogo {
+    padding-left: 25px;
+  }
+
+  .navbarToggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: var(--white);
+  }
+
+  .navbarItem {
+    width: 100%;
+  }
+
+  .navbarLinks {
+    text-align: center;
+    padding: 0.5rem;
+    width: 100%;
+    display: table;
+    font-size: 1rem;
+  }
+
+  .navbarBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+
+  .navbarBtn:hover {
+    color: var(--clockworkorange);
+    transition: 0.7s ease;
+  }
+
+  #mobileMenu {
+    position: absolute;
+    top: 20%;
+    right: 15px;
+    transform: translate(5%, 20%);
+  }
+
+  .navbarToggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+
+  #mobileMenu.isActive .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobileMenu.isActive .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobileMenu.isActive .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/*                                           SECÇÃO INTRO RODRIGO VELEZ                                                      */
+
+.hero {
+  background: url("/img/capa.png") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.heroContent {
+  color: var(--white);
+  padding: 2rem;
+  line-height: 1;
+  margin-left: 40px;
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 1s ease-in-out;
+}
+
+.heroContent h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  margin-bottom: 0.5rem;
+}
+
+.heroContent p {
+  font-size: clamp(1rem, 8vw, 2.5rem);
+  margin-bottom: 3rem;
+}
+
+.btnGetStarted {
+  padding: 1rem 3rem;
+  background-color: #721500;
+  background: linear-gradient(to right, #333333, #721500);
+  color: var(--white);
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btnGetStarted:hover {
+  color: var(--clockworkorange);
+  transition: 0.7s ease;
+}
+
+@media screen and (max-width: 960px) {
+  .btnGetStarted {
+    padding: 1rem;
+    background-color: #721500;
+    background: linear-gradient(to right, #333333, #721500);
+    color: var(--white);
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+}
+
+/*                            ANIMAÇÃO DE SCROLL DA INTRO D.E.P. RODRIGO VELEZ                                 */
+
+.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.col {
+  flex-basis: 40%;
+}
+
+.col p {
+  font-size: 20px;
+  line-height: 30px;
+  flex-basis: 40%;
+}
+
+/*                                            SOBRE                                                             */
+.team {
+  margin: 1rem;
+  padding: 8rem calc((100vh - 960px) / 2);
+  /* padding: 2rem;*/
+  background-color: var(--blackBtn);
+}
+
+.teamWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto, 350px);
+}
+
+.teamCard {
+  margin: 1rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.teamText {
+  min-width: 500px;
+  margin: 1rem;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--redBtn);
+  background: linear-gradient(to right, #333333, #721500);
+  border-radius: 10px;
+  box-shadow: 0px 3px 18px 3px rgb(0, 0, 0);
+}
+
+.teamText h2 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.teamDesc {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.teamCard p {
+  position: absolute;
+  bottom: 30px;
+  color: var(--clockworkorange);
+  left: 25px;
+  font-size: clamp(1rem, 3vw, 3rem);
+}
+
+.teamImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.textText:nth-child(1) {
+  grid-row: 1/3;
+  grid-column: 2/3;
+}
+
+.teamText:nth-child(2) {
+  grid-row: 5/6;
+  grid-column: 1/2;
+}
+
+.teamCard:nth-child(3) {
+  grid-row: 1/3;
+  grid-column: 1/2;
+}
+
+.teamCard:nth-child(4) {
+  grid-row: 2/4;
+  grid-column: 2/3;
+}
+
+.teamCard:nth-child(5) {
+  grid-row: 3/5;
+  grid-column: 1/2;
+}
+
+.teamCard:nth-child(6) {
+  grid-row: 4/6;
+  grid-column: 2/3;
+}
+
+@media screen and (max-width: 960px) {
+  .teamWrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .textText:nth-child(1) {
+    grid-row: 1 /2;
+    grid-column: 1 /2;
+  }
+
+  .teamText:nth-child(2) {
+    grid-row: 6 /7;
+    grid-column: 1 /2;
+  }
+
+  .teamCard:nth-child(3) {
+    grid-row: 3 /4;
+    grid-column: 1 /2;
+  }
+
+  .teamCard:nth-child(4) {
+    grid-row: 4 /5;
+    grid-column: 1 /2;
+  }
+
+  .teamCard:nth-child(5) {
+    grid-row: 5 /6;
+    grid-column: 1 /2;
+  }
+
+  .teamCard:nth-child(6) {
+    grid-row: 2 /3;
+    grid-column: 1 /2;
+  }
+}
+
+/*                                       BOTÃO SCROLL TO THE TOP                                              */
+.scrollTopBtn {
+  width: 50px;
+  height: 50px;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 35px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: var(--redBtn);
+  color: var(--clockworkorange);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.scrollTopBtn:hover {
+  background-color: var(--white);
+  transition: 0.5s ease;
+}
+
+@media screen and (max-width: 960px) {
+  .scrollTopBtn {
+    width: 40px;
+    height: 40px;
+    bottom: 70px;
+    right: 20px;
+    font-size: 15px;
+    padding: 3px;
+  }
+}
+/*                                            LEITOR DE MP3                                                     */
+
+.player {
+  margin: 50px;
+  color: var(--white);
+  display: flex;
+  background-color: var(--redBtn);
+  background: linear-gradient(to right, #333333, #721500);
+  height: 10vh;
+  width: auto;
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  grid-gap: 16px;
+  padding: 8px 24px;
+  position: relative;
+  border-radius: 60px;
+}
+
+.control,
+#current {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#playbtn {
+  font-size: 24px;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--white);
+  cursor: pointer;
+}
+
+#playbtn:hover {
+  color: var(--clockworkorange);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+}
+
+#current {
+  text-align: right;
+}
+
+.barra {
+  --space: -4px;
+  background-color: var(--white);
+  overflow: hidden;
+  left: var(--space);
+  right: var(--space);
+  top: var(--space);
+  bottom: var(--space);
+  position: absolute;
+  border-radius: 64px;
+  z-index: -2;
+}
+
+#progress {
+  width: var(--progress, 0%);
+  background-color: var(--clockworkorange);
+  transition: all 1s linear;
+  height: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  .player {
+    height: 15vh;
+  }
+}
+
+/*                                        DISCOGRAFIA DA BANDA                                          */
+
+.containerbody {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  color: var(--white);
+  height: 100%;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290, 1fr));
+  padding: 1rem;
+}
+
+.container h3,
+h6 {
+  color: var(--clockworkorange);
+  font-size: 2rem;
+}
+
+.container ol {
+  padding: 2rem;
+}
+
+.container .box {
+  background-color: var(--redBtn);
+  margin: 2rem;
+  position: relative;
+  height: 64vh;
+  box-shadow: 0 30px 30px rgb(0, 0, 0);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.container .box::before {
+  background-color: var(--black);
+  background-image: url("/img/CWB\ Logo.png");
+  background-size: cover;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.container .box:hover::before {
+  top: 100%;
+}
+
+.fotoDisc img {
+  max-height: 350px;
+  max-width: 350px;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .container ol {
+    padding: 1rem;
+  }
+  .container h3,
+  h6 {
+    color: var(--clockworkorange);
+    font-size: 1.2rem;
+  }
+
+  .fotoDisc img {
+    max-height: 150px;
+    max-width: 150px;
+  }
+}
+/*                                           AUTO SLIDESHOW                                                         */
+
+.intro {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin: 5rem;
+  box-shadow: 0 30px 30px var(--black);
+}
+
+.introSlideShow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+
+/*                                      FORMULÁRIO DE CONTACTO                                             */
+#fotoContactoForm img {
+  margin-left: 25%;
+  margin-bottom: 30px;
+  background: cover;
+  max-width: 50%;
+  max-width: 50%;
+  box-shadow: 0 30px 30px var(--black);
+}
+
+.contactBanner {
+  margin-top: 3rem;
+  background-color: #721500;
+  background: linear-gradient(to right, #333333, #721500);
+  color: var(--white);
+  padding: 40px;
+}
+
+.contactBanner h2 {
+  font-size: clamp(2rem, 2vw, 4rem);
+}
+.contactUs {
+  color: var(--white);
+  padding: 40px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+form {
+  padding: 40px;
+  color: var(--white);
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+.formGroup label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.formGroup input {
+  width: 620px;
+  height: 80px;;
+  padding: 10px;
+  color: #333;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.formGroup textarea {
+  width: 920px;
+  height: 250px;
+  resize: none;
+  font-size: 20px;
+}
+
+input .invalid {
+  border: 1px solid red;
+}
+
+.errorHint {
+  color: red;
+}
+
+.buttonForm {
+  padding: 1rem ;
+  height: 80px;
+  width: 300px;
+  font-size: 20px;
+  background-color: var(--redBtn);
+  background: linear-gradient(to right, #333333, #721500);
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.7s ease;
+  border-radius: 5px;
+  border: none;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.buttonForm:hover {
+  color: var(--clockworkorange);
+}
+
+.hidden {
+  display: none;
+}
+
+.thankYou {
+  padding: 40px;
+  font-size: 32px;
+  text-align: center;
+  color: var(--clockworkorange);
+}
+
+@media (max-width: 960px) {
+  /*min-width: 463*/
+  .grid-container {
+    grid-template-areas:
+      "header header header header header header"
+      "left left left left left left"
+      "middle middle middle middle middle middle"
+      "right right right right right right"
+      "footer footer footer footer footer footer";
+  }
+  .formGroup label {
+    display: block;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 8px;
+  }
+  .formGroup input {
+    width: 60%;
+    height: 10px;
+    padding: 30px;
+    color: #333;
+    margin-bottom: 4px;
+    border-radius: 5px;
+  }
+
+  .formGroup textarea {
+    width: 80%;
+    height: 200px;
+  }
+
+  .buttonForm {
+    padding: 0.8rem 2.5rem;
+  }
+}
+
+/*                                          PÁGINA MARION COBRETTI                                                  */
+
+.seccaoNoticias {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.seccaoNoticiasWrapper {
+  height: 100%;
+  width: 90%;
+  text-align: center;
+  opacity: 0.8;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seccaoNoticiasTexto {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--redBtn);
+  background: linear-gradient(to right, #333333, #721500);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seccaoNoticiasTexto h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: 32px;
+  margin: 1;
+}
+
+.seccaoNoticiasDesc {
+  font-size: clamp(0.8rrem, 3vw, 1.5rem);
+  line-height: 1.4;
+}
+
+h2 span {
+  color: var(--clockworkorange);
+  text-transform: uppercase;
+}
+h3 {
+  color: var(--clockworkorange);
+}
+
+aside p {
+  color: var(--clockworkorange);
+  text-align: right;
+  margin-top: 5px;
+}
+
+#loud {
+  color: var(--clockworkorange);
+  text-decoration: none;
+}
+
+#loud:hover {
+  color: white bolder;
+}
+
+.YoutubeVideos {
+  margin: 20px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 960px) {
+  .YoutubeVideos {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+/*                                          FOOTER DA PÁGINA                                                     */
+.footer {
+  grid-area: auto;
+  color: var(--gray);
+  padding: 10px;
+  text-align: center;
+}
+
+.mainContent {
+  display: flex;
+  box-shadow: 0px 3px 18px 3px rgba(255, 255, 255, 0.267);
+  color: var(--white);
+}
+
+.mainContent .box {
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+
+.box .content {
+  margin: 20px 0 0 0;
+}
+
+.left .content .social {
+  margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+  padding: 0 2px;
+}
+
+.left .content .social a span {
+  height: 40px;
+  width: 40px;
+  background: linear-gradient(to right, #333333, #721500);
+  color: var(--white);
+  transition: all 0.3s ease;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.left .content .social a span:hover {
+  color: var(--clockworkorange);
+}
+
+.center .content .fas {
+  font-size: 1.5rem;
+  background: linear-gradient(to right, #333333, #721500);
+  color: var(--white);
+  transition: all 0.3s ease;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.center .content .fas:hover {
+  color: var(--clockworkorange);
+}
+
+.center .content .texto {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.center .content .telef {
+  margin: 15px 0;
+}
+
+.bottom .center {
+  padding: 5px;
+  font-size: 0.9375rem;
+  background-color: var(--blackBtn);
+  padding-top: 5%;
+}
+
+.bottom .center span {
+  color: #656565;
+  text-align: center;
+  width: 2540px;
+}
+
+#flag {
+  color: var(--clockworkorange);
+}
+
+/*                                      MODAL POP UP NEWSLETTER                               */
+.subscricaoBtn {
+  position: relative;
+  font-size: clamp(0.5rem, 2vw, 1rem);
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--white);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s;
+  border-radius: 5px;
+  background-color: var(--redBtn);
+  background: linear-gradient(to right, #333333, #721500);
+}
+.subscricaoBtn:hover {
+  color: var(--clockworkorange);
+}
+
+#popup {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  color: var(--black);
+  background-color: #fff;
+  width: 550px;
+  padding: 80px 50px 50px;
+  box-shadow: 0 15px 30px var(--black);
+  transition: 0.5s;
+  visibility: hidden;
+}
+
+#popup.active {
+  visibility: visible;
+  top: 50%;
+}
+
+#popup .content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#popup .content img {
+  max-width: 80px;
+  top: 100px;
+}
+
+#popup .content .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup .content .inputBox input {
+  width: 100%;
+  border: 1px solid var(--black);
+  padding: 15px;
+  outline: none;
+  font-size: 18px;
+}
+
+.fecharNewsLetter {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.fecharNewsLetter img {
+  width: 25px;
+}
+
+.input span.error {
+  display: flex;
+  background-color: yellow;
+}
+
+.input span.error.active {
+  border: 1px solid red;
+  padding: 0.4em;
+}
+
+@media only screen and (max-width: 960px) {
+  .mainContent h3,
+  span,
+  p {
+    font-size: 16px;
+  }
+
+  .center h3,
+  span,
+  p {
+    font-size: 16px;
+  }
+
+  #popup{
+    width: 50%;
+  }
+}

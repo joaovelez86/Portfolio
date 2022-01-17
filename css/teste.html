@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*                                            SOBRE                                                             */
+.team {
+  margin: 1rem;
+  padding: 8rem calc((100vh - 1100px) / 2);
+ /* padding: 2rem;*/
+  background-color: var(--blackBtn);
+}
+
+.teamWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto, 350px);
+}
+
+.teamCard {
+  margin: 1rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.teamText {
+  margin: 1rem;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--redBtn);
+  background: linear-gradient(to right, #333333, #721500);
+  border-radius: 10px;
+  box-shadow: 0px 3px 18px 3px rgb(0, 0, 0);
+}
+
+.teamText h2 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.teamDesc {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  line-height: 1.4;
+}
+
+.teamCard p {
+  position: absolute;
+  bottom: 30px;
+  color: var(--clockworkorange);
+  left: 25px;
+  font-size: 3rem;
+}
+
+.teamImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.textText:nth-child(1) {
+  grid-row: 1/3;
+  grid-column: 2/3;
+}
+
+.teamText:nth-child(2) {
+  grid-row: 5/6;
+  grid-column: 1/2;
+}
+
+.teamCard:nth-child(3) {
+  grid-row: 1/3;
+  grid-column: 1/2;
+}
+
+.teamCard:nth-child(4) {
+  grid-row: 2/4;
+  grid-column: 2/3;
+}
+
+.teamCard:nth-child(5) {
+  grid-row: 3/5;
+  grid-column: 1/2;
+}
+
+.teamCard:nth-child(6) {
+  grid-row: 4/6;
+  grid-column: 2/3;
+}
+
+.teamCard {
+  margin: 1rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.teamText {
+  padding: 1rem;
+}
+
+.teamText h2 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.teamDesc {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  line-height: 1.4;
+}
+
+.teamCard p {
+  position: absolute;
+  bottom: 30px;
+  color: var(--clockworkorange);
+  left: 25px;
+  font-size: 1rem;
+}
+
+.teamImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+        <!--                                SECÇÃO SOBRE A BANDA                                        -->
+        <div class="team">
+            <div class="teamWrapper">
+                <div class="teamText">
+                    <p class="topline">Sobre nós</p>
+                    <h2>Clockwork Boys</h2>
+                    <p class="teamDesc">Clockwork Boys nascem em 2004 como uma banda de street rock e gravam pela
+                        primeira vez quatro temas em estudio no ano de 2005 para a edição de um single intitulado Rock
+                        nas Cadeias pela editora madrilena True Force Records. Entre os temas para esse single 7"
+                        constavam o famoso tema Fernando Chalana era Rock N´Roll, tema que chegou a passar em rádios
+                        como a Antena 3 num programa do Henrique Amaro, os outros temas gravados foram A Minha Lili
+                        Marlene, Hooligans na Noite e o tema que dava nome ao single, Rock nas Cadeias.</p>
+                </div>
+
+                <div class="teamText">
+                    <p class="topline">Por fim</p>
+                    <h2>Clockwork Boys</h2>
+                    <p class="teamDesc">Em 2012 a banda regressa para gravar o àlbum que a editora madrilena havia
+                        prometido editar desde meados de 2010.[3]
+                        Portanto a banda terminou quando tinha prometida a edição de um LP.
+                        No entanto esta paragem parece ter motivado a vontade de reactivar a banda e surgem novos
+                        videoclipes - Vida Maldita e A Dor Passa...O Ódio Fica - e um documentário - A Vida Ruim de
+                        Marion Cobretti - realizados por amigos que são fans da banda. ( Afonso Cortez & Luhuna Carvalho
+                        )
+                        Neste ano de 2012 a banda preparou uma gravação para um single em vinyl para o qual lançou um
+                        convite ao lendário <strong>Victor Gomes</strong>. Em 2016 lançam o album <q>Cantigas de
+                            escárnio e mal dizer</q> e em 2021 o seu ultimo lançamento <q>A um passo da loucura</q>.
+                        Terminam actividades com o recente falecimento de Rodrigo Velez.
+                    </p>
+                </div>
+
+                <div class="teamCard ">
+                    <p>Zé Abutre</p>
+                    <img src="/img/1.jpg" alt="Hugo Conim" class="teamImg">
+                </div>
+                <div class="teamCard">
+                    <p>Juvenal Caveira</p>
+                    <img src="/img/2.jpg" alt="Joao Ventura" class="teamImg">
+                </div>
+                <div class="teamCard">
+                    <p>Marion Cobretti</p>
+                    <img src="/img/3.jpg" alt="Rodrigo Velez" class="teamImg">
+                </div>
+                <div class="teamCard">
+                    <p>Túlio Maravilha</p>
+                    <img src="/img/4 (2).jpg" alt="BB" class="teamImg">
+                </div>
+            </div>
+        </div>
+</body>
+</html>
