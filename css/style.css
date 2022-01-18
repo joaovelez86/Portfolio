@@ -1,7 +1,7 @@
 /* Importedfrom google fonts. font-family: 'Montserrat', sans-serif; */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
 
-/* === ROOT VARIABLES === */
+/* ==== ROOT VARIABLES ==== */
 
 :root {
   --color-white: #fff;
@@ -129,7 +129,7 @@ textarea::placeholder {
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
 }
-/* === NAVNAR === */
+/* ==== NAVNAR ==== */
 
 nav {
   width: 100%;
@@ -141,7 +141,8 @@ nav {
   position: fixed;
   top: 0;
   z-index: 2;
-  border-bottom: 1px solid var(--color-light);
+
+  box-shadow: 0 .5rem .5rem rgba(19, 2, 105, 0.11);
 }
 
 nav .container {
@@ -186,7 +187,7 @@ nav .container ul li a.active {
   color: var(--color-white);
 }
 
-/* === LANDING SECTION === */
+/* ==== LANDING SECTION ==== */
 
 section.landing {
   display: grid;
@@ -275,7 +276,7 @@ section.landing .profile-area .outer-circle span {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 1rem var(--color-primary-light);
+  box-shadow: 0 0 1rem var(--color-light-gray);
 }
 
 section.landing .profile-area .outer-circle span:nth-child(1) {
@@ -306,7 +307,7 @@ section.landing .profile-area .inner-circle {
   overflow: hidden;
 }
 
-/* === ABOUT SECTION === */
+/* ==== ABOUT SECTION ==== */
 
 section.about {
   background: var(--color-light);
@@ -322,6 +323,7 @@ section.about .container {
 section.about img {
   border-radius: 0.4rem;
   margin-left: 1rem;
+  box-shadow: 3px 3px 10px;
 }
 
 section.about p {
@@ -343,7 +345,7 @@ section.about .container .read-more:hover {
   text-decoration: underline;
 }
 
-/* === SKILLS SECTION === */
+/* ==== SKILLS SECTION ==== */
 
 section.skills .container {
   width: 50%;
@@ -390,7 +392,7 @@ section.skills .skill .item:hover {
   background: var(--color-white);
 }
 
-/* === SERVICES === */
+/* ==== SERVICES ==== */
 
 section.services {
   background: var(--color-light);
@@ -409,7 +411,7 @@ section.services .container .service {
   flex-direction: column;
 }
 
-/* === PORTFOLIO=== */
+/* ==== PORTFOLIO==== */
 
 section.recent-work h1 {
   text-align: center;
@@ -445,11 +447,11 @@ section.recent-work .projects .project .action a:hover {
 }
 
 section.recent-work .projects .project .thumbnail img {
-  width: 800px;
-  height: 600px;
+  width: 700px;
+  height: 500px;
 }
 
-/* === CONTACT === */
+/* ==== CONTACT ==== */
 
 section.contact {
   background: url("/images/email.jpeg") no-repeat center center/cover;
@@ -481,7 +483,6 @@ section.contact .container h1:hover {
 section.contact .container p {
   text-align: center;
   color: var(--color-white);
-  opacity: 0.9;
   margin-top: 0.5rem;
 }
 
@@ -501,14 +502,14 @@ section.contact form textarea {
   transition: var(---transition);
 }
 
-section.contact form textarea{
+section.contact form textarea {
   height: 10rem;
 }
 
 section.contact form input:focus,
 section.contact form textarea:focus {
-  background: var(--color-white);
-  color: var(--color-black);
+  background: var(--color-primary);
+  color: var(--color-white);
   opacity: 0.9;
 }
 
@@ -522,11 +523,86 @@ section.contact form .btn {
   background: var(--color-white);
   color: var(--color-black);
   margin: 2rem auto 0;
+  border: 1px solid var(--color-white);
 }
 
 section.contact form .btn:hover {
   background: transparent;
-  border: 2px solid var(--color-white);
+  border: 1px solid var(--color-white);
   color: var(--color-white);
   cursor: pointer;
+}
+
+/* ==== FOOTER SECTION ==== */
+
+footer {
+  padding-top: 5rem;
+  background-color: --color-primary;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .container ul {
+  display: flex;
+  gap: 3rem;
+}
+
+footer .container ul a {
+  color: var(--color-light-gray);
+}
+
+footer .container ul a:hover {
+  color: var(--color-white);
+}
+
+footer .container .socials {
+  display: flex;
+  gap: 2rem;
+}
+
+footer .container .socials a {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: var(---transition);
+}
+
+footer .container .socials a:hover {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+
+footer .copyright {
+  color: var(--color-white);
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  font-size: 0.7rem;
+  background: var(--color-light-gray) transparent;
+}
+
+footer .copyright span {
+  color: var(--color-light-gray);
+}
+
+footer .copyright span:hover {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+footer .container h3 {
+  color: var(--color-white);
+}
+
+footer .container h3:hover {
+  color: var(--color-primary);
+}
+
+
 }

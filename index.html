@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
-  <!--=== More Incons ===-->
+  <!-- More Incons -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css" />
   <title>João Velez - Portfolio</title>
 </head>
 
 <body>
-  <!--=== NAVBAR ===-->
+  <!--==== NAVBAR ====-->
   <nav>
     <div class="container">
       <a href="#">
@@ -26,12 +26,12 @@
         <li><a href="#contact">Let's talk</a></li>
       </ul>
 
-      <button><span class="material-icons-sharp"> menu </span></button>
-      <button><span class="material-icons-sharp"> close </span></button>
+      <button><span class="material-icons-sharp" id="menu-btn"> menu </span></button>
+      <button id="close-btn"><span class="material-icons-sharp"> close </span></button>
     </div>
   </nav>
 
-  <!--=== LANDING PAGE ===-->
+  <!--==== LANDING PAGE ====-->
   <section class="landing">
     <div class="container">
       <div class="socials">
@@ -68,7 +68,7 @@
     </div>
   </section>
 
-  <!--=== ABOUT SECTION ===-->
+  <!--==== ABOUT SECTION ====-->
   <section class="about" id="about">
     <h1>About me</h1>
     <div class="container">
@@ -106,7 +106,7 @@
     </div>
   </section>
 
-  <!-- === SKILLS SECTION ===-->
+  <!-- ==== SKILLS SECTION ====-->
 
   <section class="skills" id="skills">
 
@@ -206,34 +206,7 @@
 
   </section>
 
-  <!-- === SERVICES SECTION
-
-  <section class="services" id="services">
-    <h1>Services</h1>
-    <div class="container">
-      <div class="service">
-        <span class="material-icons-sharp">language</span>
-        <h3>UI/UX DESIGN</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque amet odio numquam quis repellat iusto natus
-          rerum harum accusamus, est facere, nostrum fugit reprehenderit adipisci illo enim minima dolor perferendis.
-        </p>
-      </div>
-
-      <div class="service">
-        <span class="material-icons-sharp">design_services</span>
-        <h3>UI/UX DESIGN</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque amet odio numquam quis repellat iusto natus
-          rerum harum accusamus, est facere, nostrum fugit reprehenderit adipisci illo enim minima dolor perferendis.
-        </p>
-      </div>
-      
-      
-    </div>
-  </section>
-
-  ===-->
-
-  <!-- === PORTFOLIO SECTION ===-->
+  <!-- ==== PORTFOLIO SECTION ====-->
 
   <section class="recent-work" id="portfolio">
     <div class="container">
@@ -243,7 +216,7 @@
 
         <div class="project">
           <div class="thumbnail">
-            <img src="/images/eshop.jpg" alt="">
+            <img src="/images/maxresdefault.jpg" alt="">
           </div>
           <h2>Complete Responsive E-Commerce website.</h2>
           <p>Software design patter MVC. Html, Css, Php, Ajax, Mysql </p>
@@ -255,10 +228,10 @@
 
         <div class="project">
           <div class="thumbnail">
-            <img src="/images/eshop.jpg" alt="">
+            <img src="/images/e-commerce.jpg" alt="">
           </div>
-          <h2>Complete Responsive E-Commerce website.</h2>
-          <p>Software design patter MVC. Html, Css, Php, Ajax, Mysql </p>
+          <h2>E-Commerce website.</h2>
+          <p> Html5, Css3, Php, Ajax & Mysql with MVC design pattern .</p>
 
           <div class="action">
             <a href="https://github.com/joaovelez86/eshop" target="_blank">Github</a>
@@ -302,12 +275,41 @@
           <input type="email" name="Email" placeholder="Email" required>
           <input type="email" name="Subject" placeholder="Subject" required>
           <textarea name="Message" placeholder="Message" required></textarea>
-          <input type="submit" value="submit" class="btn btn-primary">
+          <input type="submit" value="Submit" class="btn btn-primary">
         </form>
       </div>
       
     </div>
   </section>
+
+  <!-- === FOOTER SECTION === -->
+
+  <footer>
+    <div class="container">
+      <a href="#">
+        <h3>Portfolio</h3>
+      </a>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Let's talk</a></li>
+      </ul>
+
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/jo%C3%A3o-velez-52276b213/" target="_blank"><i
+            class="uil uil-linkedin"></i></a>
+        <a href="https://github.com/joaovelez86/" target="_blank"><i class="uil uil-github"></i></a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Portfolio made by <span>João Velez</span> with htlm3, Css5 & Vanilla JavaScript. January 2022.
+    </div>
+  </footer>
+
 
   <script src="js/script.js"></script>
 </body>
