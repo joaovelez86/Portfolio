@@ -6,13 +6,13 @@
 :root {
   --color-white: #fff;
   --color-light: #f4f4f4;
-  --color-light-gray: #c0b8b8;
+  --color-light-gray: #ada6a6;
   --color-dark: #525252;
   --color-black: #09090a;
   --color-primary: #2a2a72;
   --color-primary-2: #009ffd;
 
-  --color-primary-light: rgba(242, 78, 28, 0.12);
+  --color-primary-light: #f4f4f43d;
   --color-sucess: #29f5a6;
   --color-warning: #ffce31;
 
@@ -29,6 +29,15 @@
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--color-primary-light);
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: var(--color-primary);
+}
 html {
   font-size: 15px;
   scroll-behavior: smooth;
@@ -129,6 +138,30 @@ textarea::placeholder {
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
 }
+
+/* ==== SCROLL TO THE TOP BTN ==== */
+
+#scrollBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 165px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background: var(--color-primary);
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 0.2rem; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
+  font-size: 2rem; /* Increase font size */
+}
+
+#scrollBtn:hover {
+  background-color: var(--color-primary);
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
 /* ==== NAVNAR ==== */
 
 nav {
@@ -141,8 +174,13 @@ nav {
   position: fixed;
   top: 0;
   z-index: 2;
+  border-bottom: 1px solid var(--color-light);
+}
 
-  box-shadow: 0 .5rem .5rem rgba(19, 2, 105, 0.11);
+/* add box shadow on scroll with JavaScript */
+nav.show-box-shadow {
+  box-shadow: 0 0.6rem 1rem var(--color-light-gray);
+  border: none;
 }
 
 nav .container {
@@ -200,7 +238,8 @@ section.landing {
 section.landing .container {
   display: grid;
   grid-template-columns: 6rem auto 28rem;
-  gap: 2rem;
+  gap: 1rem;
+  
 }
 
 section.landing .socials {
@@ -241,7 +280,8 @@ section.landing h3 {
 }
 
 section.landing .info p {
-  width: 35rem;
+  width: 37rem;
+  text-align: justify;
 }
 
 section.landing .profile-area {
@@ -251,8 +291,8 @@ section.landing .profile-area {
 }
 
 section.landing .profile-area .outer-circle {
-  width: 24rem;
-  height: 24rem;
+  width: 20rem;
+  height: 20rem;
   border: 1px solid var(--color-primary);
   border-radius: 50%;
   position: relative;
@@ -267,8 +307,8 @@ section.landing .profile-area .outer-circle {
 
 section.landing .profile-area .outer-circle span {
   display: block;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   position: absolute;
   background: var(--color-white);
@@ -301,8 +341,8 @@ section.landing .profile-area .outer-circle span:nth-child(4) {
 
 section.landing .profile-area .inner-circle {
   position: absolute;
-  width: 18rem;
-  height: 18rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -311,27 +351,50 @@ section.landing .profile-area .inner-circle {
 
 section.about {
   background: var(--color-light);
-  margin: 10%;
+  margin: 5%;
+  width: 100% auto;
 }
 
 section.about .container {
   display: grid;
   grid-template-columns: 26rem auto;
-  gap: 5rem;
+  gap: 7rem;
 }
 
 section.about img {
   border-radius: 0.4rem;
-  margin-left: 1rem;
   box-shadow: 3px 3px 10px;
+  margin-left:5rem;
+}
+section.read-more-content a  {
+  margin-left:4rem;
+}
+section.about .container .read-more{
+  margin-left:4rem;
+}
+section.about h4 {
+  margin: 2rem;
+}
+section.about p {
+  margin: 4rem;
+  text-align: justify;
 }
 
-section.about p {
-  margin: 1rem;
+section.about .read-more-content p span a{
+  color: rgb(255, 165, 0);
+}
+
+section.about .read-more-content p span a:hover{
+  color: rgb(255, 0, 0);
 }
 
 section.about .container .read-more-content {
   display: none;
+}
+
+/* toggle read more content que uso em JS */
+section.about .container .read-more-content.show-content {
+  display: block;
 }
 
 section.about .container .read-more {
@@ -351,7 +414,7 @@ section.skills .container {
   width: 50%;
 }
 
-section.skills .skill {
+section.skills .container .skill {
   margin-bottom: 1rem;
 }
 
@@ -376,6 +439,15 @@ section.skills .skill .head .left {
   gap: 1rem;
 }
 
+section.skills .skill .items {
+  display: none;
+}
+
+/* show/hide javascript */
+section.skills .container .skill .items.show-items {
+  display: block;
+}
+
 section.skills .skill .item {
   display: flex;
   flex-direction: column;
@@ -392,39 +464,18 @@ section.skills .skill .item:hover {
   background: var(--color-white);
 }
 
-/* ==== SERVICES ==== */
-
-section.services {
-  background: var(--color-light);
-}
-
-section.services .container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-section.services .container .service {
-  background: var(--color-white);
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
 /* ==== PORTFOLIO==== */
 
 section.recent-work h1 {
   text-align: center;
   margin: 3rem 0 1rem;
-
-  margin: 5rem;
 }
 
 section.recent-work .projects {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  margin: 3rem;
+  margin: 10rem;
 }
 
 section.recent-work .projects .project {
@@ -435,7 +486,7 @@ section.recent-work .projects .project {
 
 section.recent-work .projects .project .action {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 section.recent-work .projects .project .action a {
@@ -447,17 +498,15 @@ section.recent-work .projects .project .action a:hover {
 }
 
 section.recent-work .projects .project .thumbnail img {
-  width: 700px;
-  height: 500px;
+  max-width: 600px;
+  height: 400px;
 }
 
-/* ==== CONTACT ==== */
+/* ==== LET'S TALK SECTION ==== */
 
 section.contact {
   background: url("/images/email.jpeg") no-repeat center center/cover;
-  padding: 0;
-  max-width: 250vh;
-  height: 85vh;
+  padding: 3rem;
 }
 
 section.contact .overlay {
@@ -537,7 +586,7 @@ section.contact form .btn:hover {
 
 footer {
   padding-top: 5rem;
-  background-color: --color-primary;
+  background-color: var(--color-primary);
   background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 }
 
@@ -552,8 +601,13 @@ footer .container ul {
   gap: 3rem;
 }
 
+footer .container h3 {
+  padding-left: 3rem;
+}
+
 footer .container ul a {
   color: var(--color-light-gray);
+  padding-right: 3rem;
 }
 
 footer .container ul a:hover {
@@ -563,6 +617,7 @@ footer .container ul a:hover {
 footer .container .socials {
   display: flex;
   gap: 2rem;
+  padding-right: 3rem;
 }
 
 footer .container .socials a {
@@ -604,5 +659,240 @@ footer .container h3:hover {
   color: var(--color-primary);
 }
 
+/* ==== MEDIA QUERIES ==== */
 
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 0.68rem;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  /* ==== NAVBAR === */
+  nav {
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  nav h3 {
+    margin-left: 1rem;
+  }
+  nav .container {
+    width: 100%;
+  }
+
+  nav .container ul {
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    z-index: 3;
+    width: 16rem;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: 0.5rem 0 0.5rem rgba(0, 0, 0, 0.068);
+    display: none;
+  }
+
+  nav ul li {
+    height: 4.6rem;
+    width: 100%;
+  }
+
+  nav .container ul li a {
+    width: 100%;
+    justify-content: start;
+    padding-left: 2rem;
+  }
+
+  nav .container ul li a:hover {
+    padding-left: 3rem;
+  }
+
+  nav button {
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-black);
+    margin-right: 1rem;
+  }
+
+  nav button#close-btn {
+    display: none;
+  }
+
+  /* ==== LANDING SECTION ==== */
+
+  section.landing {
+    margin-top: -4rem;
+    padding-bottom: 7rem;
+    max-width: 100vh;
+    overflow-x: hidden;
+  }
+
+  section.landing .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 50%;
+    text-align: center;
+    row-gap: 6rem;
+  }
+
+  section.landing .container .socials {
+    display: none;
+  }
+
+  section.landing .container .info {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  section.landing .container .info h1 {
+    text-align: center;
+  }
+
+  section.landing .container .info p {
+    margin: 0 auto;
+    width: 92%;
+  }
+
+  section.landing .container .profile-area {
+    grid-row: 1;
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  section.landing .container .outer-circle {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  section.landing .container .inner-circle {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  section.landing .container .outer-circle span {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  section.landing .profile-area .outer-circle span:nth-child(1) {
+    left: calc(50% - 1.5rem);
+    top: -1.5rem;
+  }
+
+  section.landing .profile-area .outer-circle span:nth-child(2) {
+    right: -1.5rem;
+    top: calc(50% - 1.5rem);
+  }
+
+  section.landing .profile-area .outer-circle span:nth-child(3) {
+    left: -1.5rem;
+    top: calc(50% - 1.5rem);
+  }
+
+  section.landing .profile-area .outer-circle span:nth-child(4) {
+    bottom: -1.5rem;
+    left: calc(50% - 1.5rem);
+  }
+
+  /* ==== SCROLL TO THE TOP BTN ==== */
+  button#scrollBtn {
+    bottom: 5.125; 
+    right: 1rem;
+    padding: .2rem; 
+    font-size: 1.4rem; 
+  }
+
+  button#scrollBtn:hover {
+    background-color: var(--color-primary);
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  }
+
+  /* ==== ABOUT ==== */
+  section.about .container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: justify;
+    margin: .5rem;
+  }
+
+  section.about .container img{
+  margin-left: 2rem;
+  }
+
+  section.about .container p {
+    width: 70%;
+    text-align: justify;
+  }
+
+  section.about .btn {
+    margin-left: 4rem;
+    font-size: 95%;
+  }
+  /* ==== SKILLS ==== */
+
+  section.skills .container {
+    max-width: 94%;
+  }
+
+  /* ==== PORTFOLIO ==== */
+
+  section.recent-work .container .projects {
+    grid-template-columns: 1fr;
+    max-width: 94%;
+  }
+
+  section.recent-work .container h1,
+  p {
+    width: 94%;
+    margin: 1.4rem 0 1rem;
+  }
+
+  section.recent-work .projects .project .thumbnail img {
+    width: 70%;
+    height: 70%;
+  }
+
+  /* ==== CONTACT ==== */
+  section.contact .container {
+    width: 80vw;
+    margin: 0.5rem auto 0;
+  }
+  /* ==== FOOTER ==== */
+  footer .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  footer .container ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.4rem;
+    margin-left: 15%;
+  }
+
+  footer .container h3 {
+    margin-left: -10%;
+  }
+
+  footer .socials a {
+    margin-left: 25%;
+  }
 }
